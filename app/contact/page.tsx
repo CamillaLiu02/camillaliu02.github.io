@@ -10,60 +10,60 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <PageTransition>
-      <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-accent-50 py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl font-display font-bold text-gray-900 mb-4">
+      <div className="min-h-screen bg-gray-950 py-24">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="text-center mb-16">
+            <h1 className="text-6xl font-playfair font-bold text-white mb-6 leading-tight">
               Let's Connect
             </h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-400 font-lora leading-relaxed">
               I'm always open to discussing new opportunities, projects, or just
               chatting about design and tech!
             </p>
           </div>
 
           {/* Contact Methods */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-2xl mx-auto">
             <a
               href="mailto:changliu5101@gmail.com"
-              className="bg-white rounded-xl p-8 text-center shadow-md hover:shadow-xl transition-all duration-200 border border-gray-200 group"
+              className="bg-gray-800 rounded-sm p-10 text-center shadow-lg hover:shadow-xl transition-all duration-200 border border-gray-700 hover:border-gray-600 group"
             >
-              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary-600 transition-colors">
-                <FaEnvelope className="text-2xl text-primary-600 group-hover:text-white transition-colors" />
+              <div className="w-16 h-16 bg-gray-700 rounded-sm flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 transition-colors">
+                <FaEnvelope className="text-2xl text-blue-400 group-hover:text-white transition-colors" />
               </div>
-              <h3 className="font-bold text-gray-900 mb-2">Email</h3>
-              <p className="text-gray-600 text-sm">changliu5101@gmail.com</p>
+              <h3 className="font-playfair font-bold text-white mb-3 text-lg">Email</h3>
+              <p className="text-gray-400 text-sm font-lora">changliu5101@gmail.com</p>
             </a>
 
             <a
               href="https://www.linkedin.com/in/chang-l-276423314"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white rounded-xl p-8 text-center shadow-md hover:shadow-xl transition-all duration-200 border border-gray-200 group"
+              className="bg-gray-800 rounded-sm p-10 text-center shadow-lg hover:shadow-xl transition-all duration-200 border border-gray-700 hover:border-gray-600 group"
             >
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600 transition-colors">
-                <FaLinkedin className="text-2xl text-blue-600 group-hover:text-white transition-colors" />
+              <div className="w-16 h-16 bg-gray-700 rounded-sm flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 transition-colors">
+                <FaLinkedin className="text-2xl text-blue-400 group-hover:text-white transition-colors" />
               </div>
-              <h3 className="font-bold text-gray-900 mb-2">LinkedIn</h3>
-              <p className="text-gray-600 text-sm">/in/chang-l-276423314</p>
+              <h3 className="font-playfair font-bold text-white mb-3 text-lg">LinkedIn</h3>
+              <p className="text-gray-400 text-sm font-lora">/in/chang-l-276423314</p>
             </a>
           </div>
 
           {/* Contact Form Placeholder */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+          <div className="bg-gray-800 rounded-sm p-10 shadow-lg border border-gray-700">
+            <h2 className="text-3xl font-playfair font-bold text-white mb-8">
               Send a Message
             </h2>
             <form
               action="mailto:changliu5101@gmail.com"
               method="GET"
               encType="text/plain"
-              className="space-y-6"
+              className="space-y-8"
             >
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 mb-2"
+                  className="block text-sm font-medium text-gray-300 mb-3"
                 >
                   Name
                 </label>
@@ -72,7 +72,7 @@ export default function ContactPage() {
                   id="name"
                   name="name"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-600 rounded-sm bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Your name"
                 />
               </div>
@@ -80,7 +80,7 @@ export default function ContactPage() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-2"
+                  className="block text-sm font-medium text-gray-300 mb-3"
                 >
                   Email
                 </label>
@@ -89,7 +89,7 @@ export default function ContactPage() {
                   id="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-600 rounded-sm bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="your@email.com"
                 />
               </div>
@@ -97,7 +97,7 @@ export default function ContactPage() {
               <div>
                 <label
                   htmlFor="subject"
-                  className="block text-sm font-medium text-gray-700 mb-2"
+                  className="block text-sm font-medium text-gray-300 mb-3"
                 >
                   Subject
                 </label>
@@ -106,7 +106,7 @@ export default function ContactPage() {
                   id="subject"
                   name="subject"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-600 rounded-sm bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="What's this about?"
                 />
               </div>
@@ -114,7 +114,7 @@ export default function ContactPage() {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 mb-2"
+                  className="block text-sm font-medium text-gray-300 mb-3"
                 >
                   Message
                 </label>
@@ -123,19 +123,19 @@ export default function ContactPage() {
                   name="body"
                   rows={6}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-600 rounded-sm bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Tell me about your project or opportunity..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full px-6 py-4 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors"
+                className="w-full px-6 py-4 bg-blue-500 text-white rounded-sm font-semibold hover:bg-blue-600 transition-colors"
               >
                 Send Message
               </button>
 
-              <p className="text-sm text-gray-500 text-center">
+              <p className="text-sm text-gray-400 text-center">
                 This form uses mailto. For a better experience, integrate with{' '}
                 <a
                   href="https://formspree.io"

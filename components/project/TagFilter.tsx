@@ -18,11 +18,11 @@ export default function TagFilter({ tags, selectedTags, onTagToggle }: TagFilter
         className={cn(
           'px-4 py-2 rounded-full text-sm font-medium transition-all duration-200',
           selectedTags.length === 0
-            ? 'bg-primary-600 text-white shadow-md'
-            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+            ? 'bg-blue-500 text-white shadow-md'
+            : 'bg-gray-800 text-gray-400 hover:bg-gray-700 border border-gray-700'
         )}
       >
-        All Projects
+        My Projects
       </button>
       {tags.map((tag) => (
         <button
@@ -31,8 +31,8 @@ export default function TagFilter({ tags, selectedTags, onTagToggle }: TagFilter
           className={cn(
             'px-4 py-2 rounded-full text-sm font-medium transition-all duration-200',
             selectedTags.includes(tag)
-              ? 'bg-primary-600 text-white shadow-md'
-              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              ? 'bg-blue-500 text-white shadow-md'
+              : 'bg-gray-800 text-gray-400 hover:bg-gray-700 border border-gray-700'
           )}
         >
           {tag}

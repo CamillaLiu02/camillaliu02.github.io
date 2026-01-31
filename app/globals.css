@@ -3,52 +3,211 @@
 @tailwind utilities;
 
 /* Global styles */
-html, body {
-  height: 100%;
+html {
+  scroll-behavior: smooth;
+  cursor: none;
 }
 
-/* Modern subtle background pattern */
+html, body {
+  height: 100%;
+  background: #0a0a0a;
+  color: #ffffff;
+}
+
+/* Clean background */
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #e0f2fe 0%, #ddd6fe 50%, #fce7f3 100%);
-  position: relative;
+  background: #0a0a0a;
+  color: #ffffff;
   min-height: 100vh;
+  cursor: none;
 }
 
-body::before {
-  content: '';
-  position: fixed;
+/* Hide default cursor on interactive elements */
+a, button, input, select, textarea {
+  cursor: none;
+}
+
+/* Scale up on hover instead of glow */
+a, button, [role="button"] {
+  transition: transform 0.3s ease-in-out;
+}
+
+a:hover, button:hover, [role="button"]:hover {
+  transform: scale(1.05);
+}
+
+/* Card scale on hover */
+.group, [class*="card"] {
+  transition: transform 0.3s ease-in-out;
+}
+
+.group:hover, [class*="card"]:hover {
+  transform: scale(1.03);
+}
+
+/* Glitch Animation */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+    text-shadow: 0 0 0 transparent;
+  }
+  20% {
+    transform: translate(-2px, 2px);
+    text-shadow: 2px -2px 0 rgba(255, 0, 255, 0.5), -2px 2px 0 rgba(0, 255, 255, 0.5);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+    text-shadow: 2px 2px 0 rgba(255, 0, 255, 0.5), -2px -2px 0 rgba(0, 255, 255, 0.5);
+  }
+  60% {
+    transform: translate(2px, 2px);
+    text-shadow: -2px -2px 0 rgba(255, 0, 255, 0.5), 2px 2px 0 rgba(0, 255, 255, 0.5);
+  }
+  80% {
+    transform: translate(2px, -2px);
+    text-shadow: -2px 2px 0 rgba(255, 0, 255, 0.5), 2px -2px 0 rgba(0, 255, 255, 0.5);
+  }
+  100% {
+    transform: translate(0);
+    text-shadow: 0 0 0 transparent;
+  }
+}
+
+@keyframes glitch-skew {
+  0% {
+    transform: skew(0deg);
+  }
+  10% {
+    transform: skew(-5deg);
+  }
+  20% {
+    transform: skew(5deg);
+  }
+  30% {
+    transform: skew(-5deg);
+  }
+  40% {
+    transform: skew(5deg);
+  }
+  50% {
+    transform: skew(0deg);
+  }
+  100% {
+    transform: skew(0deg);
+  }
+}
+
+/* Terminal Icon Pulse Glow - 3 separate breaths */
+@keyframes terminal-pulse-glow {
+  0%, 100% {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0, 0, 0, 0.15), 0 0 20px rgba(59, 130, 246, 0.4);
+  }
+}
+
+.terminal-icon-glow {
+  animation: terminal-pulse-glow 2s ease-in-out 3;
+}
+
+/* Toast slide in animation */
+@keyframes toast-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes toast-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.terminal-toast {
+  animation: toast-slide-in 0.3s ease-out forwards;
+}
+
+.terminal-toast-exit {
+  animation: toast-fade-out 0.3s ease-in forwards;
+}
+
+@keyframes glitch-fade {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes scan-lines {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch:hover {
+  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
-  opacity: 0.6;
-  background-image: 
-    radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 40% 80%, rgba(236, 72, 153, 0.12) 0%, transparent 50%);
-  pointer-events: none;
+  opacity: 0.8;
 }
 
-/* Add floating animation */
-@keyframes float {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(5deg); }
+.glitch::before {
+  animation: glitch-fade 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse infinite;
+  color: #ff00ff;
+  z-index: -1;
 }
 
-body::after {
+.glitch::after {
+  animation: glitch-fade 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+  color: #00ffff;
+  z-index: -2;
+}
+
+.glitch-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.glitch-wrapper::before {
   content: '';
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  z-index: 0;
-  opacity: 0.08;
-  background-image: 
-    repeating-linear-gradient(45deg, transparent, transparent 50px, rgba(59, 130, 246, 0.03) 50px, rgba(59, 130, 246, 0.03) 100px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  animation: scan-lines 3s linear infinite;
+  z-index: 10;
   pointer-events: none;
-  animation: float 20s ease-in-out infinite;
 }

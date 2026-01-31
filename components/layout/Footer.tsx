@@ -5,29 +5,29 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-50 border-t border-gray-200 mt-20">
+    <footer className="bg-gray-950 border-t border-gray-800 mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-lg font-display font-bold text-gray-900 mb-4">
+            <h3 className="text-lg font-display font-bold text-white mb-4">
               Chang Liu
             </h3>
-            <p className="text-gray-600 text-sm">
-              Full-Stack Developer & HRI Researcher building robust systems and intuitive interfaces.
+            <p className="text-gray-400 text-sm">
+              Full-Stack Developer & HCI/HRI Researcher building robust systems and intuitive interfaces.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
+            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
               Quick Links
             </h4>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/projects"
-                  className="text-gray-600 hover:text-primary-600 transition-colors text-sm"
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
                   Projects
                 </Link>
@@ -35,7 +35,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="text-gray-600 hover:text-primary-600 transition-colors text-sm"
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
                   About
                 </Link>
@@ -43,7 +43,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/resume"
-                  className="text-gray-600 hover:text-primary-600 transition-colors text-sm"
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
                   Resume
                 </Link>
@@ -51,7 +51,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="text-gray-600 hover:text-primary-600 transition-colors text-sm"
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
                   Contact
                 </Link>
@@ -61,7 +61,7 @@ export default function Footer() {
 
           {/* Social */}
           <div>
-            <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
+            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
               Connect
             </h4>
             <div className="flex space-x-4">
@@ -69,14 +69,14 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/chang-l-276423314"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-primary-600 transition-colors"
+                className="text-gray-400 hover:text-white transition-colors"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin size={24} />
               </a>
               <a
                 href="mailto:changliu5101@gmail.com"
-                className="text-gray-600 hover:text-primary-600 transition-colors"
+                className="text-gray-400 hover:text-white transition-colors"
                 aria-label="Email"
               >
                 <FaEnvelope size={24} />
@@ -85,8 +85,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-gray-200 text-center">
-          <p className="text-sm text-gray-600">
+        <div className="mt-8 pt-8 border-t border-gray-800 text-center">
+          <p className="text-sm text-gray-500">
             &copy; {currentYear} Chang Liu. All rights reserved.
           </p>
         </div>

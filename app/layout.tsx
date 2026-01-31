@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display, Lora } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
+import CustomCursor from "@/components/ui/CustomCursor";
+import ScrollAnimations from "@/components/ui/ScrollAnimations";
+import Terminal from "@/components/ui/Terminal";
+import { TerminalProvider } from "@/components/ui/TerminalContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -10,10 +14,22 @@ const inter = Inter({
   display: "swap",
 });
 
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const lora = Lora({
+  variable: "--font-lora",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://yourwebsite.com"),
   title: {
-    default: "Chang Liu - Full-Stack Developer & HRI Researcher",
+    default: "Chang Liu - Full-Stack Developer & HCI/HRI Researcher",
     template: "%s | Chang Liu",
   },
   description:
@@ -33,7 +49,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://yourwebsite.com",
     siteName: "Chang Liu Portfolio",
-    title: "Chang Liu - Full-Stack Developer & HRI Researcher",
+    title: "Chang Liu - Full-Stack Developer & HCI/HRI Researcher",
     description:
       "Portfolio showcasing full-stack development and HRI research projects",
       images: [
@@ -47,8 +63,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chang Liu - Full-Stack Developer & HRI Researcher",
-    description: "Portfolio showcasing full-stack development and HRI research projects",
+    title: "Chang Liu - Full-Stack Developer & HCI/HRI Researcher",
+    description: "Portfolio showcasing full-stack development and HCI/HRI research projects",
     images: ["/og-image.png"],
     creator: "@yourusername",
   },
@@ -71,13 +87,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable} style={{ fontFamily: 'var(--font-inter)' }}>
-      <body className="antialiased text-gray-900">
-        <div className="relative z-10">
-          <Navigation />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
-        </div>
+    <html lang="en" className={`${inter.variable} ${playfair.variable} ${lora.variable}`} style={{ fontFamily: 'var(--font-inter)' }}>
+      <body className="antialiased text-white bg-gray-950">
+        <TerminalProvider>
+          <ScrollAnimations />
+          <CustomCursor />
+          <Terminal />
+          <div className="relative z-10">
+            <Navigation />
+            <main className="min-h-screen">{children}</main>
+            <Footer />
+          </div>
+        </TerminalProvider>
       </body>
     </html>
   );

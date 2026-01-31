@@ -38,7 +38,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               {project.tags.slice(0, 3).map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs font-medium px-3 py-1 bg-primary-50 text-primary-700 rounded-full"
+                  className="text-xs font-medium px-3 py-1 bg-blue-50 text-blue-700 rounded-full"
                 >
                   {tag}
                 </span>
@@ -46,7 +46,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             </div>
 
             {/* Title */}
-            <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
+            <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
               {project.title}
             </h3>
 
@@ -58,7 +58,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             {/* Meta */}
             <div className="flex items-center justify-between text-sm text-gray-500">
               <span>{formatDate(project.date)}</span>
-              <span className="flex items-center gap-1 text-primary-600 font-medium group-hover:gap-2 transition-all">
+              <span className="flex items-center gap-1 text-blue-600 font-medium group-hover:gap-2 transition-all">
                 View Case Study
                 <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </span>

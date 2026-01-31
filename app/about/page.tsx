@@ -49,16 +49,16 @@ export default function AboutPage() {
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-gray-950">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-primary-50 to-accent-50 py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <section className="bg-gray-900 border-b border-gray-800 py-24">
+          <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
-                <h1 className="text-5xl font-display font-bold text-gray-900 mb-6">
+                <h1 className="text-6xl font-playfair font-bold text-white mb-8 leading-tight">
                   About Me
                 </h1>
-                <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+                <div className="space-y-6 text-lg text-gray-300 leading-relaxed font-lora">
                   <p>Hi! My name is <strong>Chang (Camilla) Liu</strong>! </p>
                   <p>
                     I'm a <strong>computer science student and researcher</strong> focused on building <strong>intelligent, human-centered systems</strong>. My interests lie at the intersection of <strong>robotics and human–computer interaction</strong>, where <strong>full-stack software, AI-driven decision-making, and data-informed system design</strong> come together in real-world applications.
@@ -66,11 +66,11 @@ export default function AboutPage() {
                   <p>
                     I care deeply about <strong>accessibility and usability</strong>, and I aim to design systems where <strong>strong engineering and thoughtful user experience reinforce each other</strong>.
                   </p>
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {[ 'Full-stack engineering', 'HRI research', 'UI/UX design', 'Data & ML' ].map((tag) => (
+                  <div className="flex flex-wrap gap-3 pt-4">
+                    {[ 'Full-stack engineering', 'HCI/HRI research', 'UI/UX design', 'Data & ML' ].map((tag) => (
                       <span
                         key={tag}
-                        className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold text-primary-700 bg-primary-50 border border-primary-100"
+                        className="inline-flex items-center px-4 py-2 rounded-sm text-sm font-semibold text-white bg-gray-800 border border-gray-700"
                       >
                         {tag}
                       </span>
@@ -78,7 +78,7 @@ export default function AboutPage() {
                   </div>
                 </div>
               </div>
-              <div className="relative h-[560px] rounded-2xl overflow-hidden shadow-2xl border border-white/50">
+              <div className="relative h-[560px] rounded-lg overflow-hidden shadow-2xl border border-gray-800">
                 <Image
                   src="/resume/liu.png"
                   alt="Chang Liu portrait"
@@ -93,27 +93,27 @@ export default function AboutPage() {
         </section>
 
         {/* Skills */}
-        <section className="py-20 bg-gradient-to-b from-white via-primary-50/40 to-accent-50/30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-display font-bold text-gray-900 mb-12 text-center">
+        <section className="py-24 bg-gray-950 border-b border-gray-800">
+          <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+            <h2 className="text-5xl font-playfair font-bold text-white mb-16 text-center leading-tight">
               Skills & Expertise
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {Object.entries(skills).map(([category, items]) => (
                 <div
                   key={category}
-                  className="bg-gray-50 rounded-xl p-6 border border-gray-200"
+                  className="bg-gray-800 rounded-sm p-8 border border-gray-700 hover:border-gray-600 transition-colors"
                 >
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  <h3 className="text-xl font-playfair font-bold text-white mb-6">
                     {category}
                   </h3>
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     {items.map((skill) => (
                       <li
                         key={skill}
-                        className="text-gray-700 flex items-center gap-2"
+                        className="text-gray-300 font-lora text-sm flex items-center gap-3"
                       >
-                        <span className="w-2 h-2 bg-primary-500 rounded-full" />
+                        <span className="w-2 h-2 bg-blue-500 rounded-full" />
                         {skill}
                       </li>
                     ))}
@@ -125,16 +125,16 @@ export default function AboutPage() {
         </section>
 
         {/* Timeline */}
-        <section className="py-20 bg-gradient-to-br from-gray-50 via-white to-primary-50/40">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-display font-bold text-gray-900 mb-12 text-center">
+        <section className="py-24 bg-gray-900 border-b border-gray-800">
+          <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+            <h2 className="text-5xl font-playfair font-bold text-white mb-16 text-center leading-tight">
               Experience & Education
             </h2>
 
             <div>
-              <div className="flex items-center gap-3 mb-6">
-                <HiBriefcase className="text-2xl text-primary-600" />
-                <h3 className="text-2xl font-bold text-gray-900">Experience</h3>
+              <div className="flex items-center gap-3 mb-8">
+                <HiBriefcase className="text-2xl text-blue-500" />
+                <h3 className="text-2xl font-playfair font-bold text-white">Experience</h3>
               </div>
               <TimelineItem
                 date="Oct 2025 – Present"
@@ -157,10 +157,10 @@ export default function AboutPage() {
               />
             </div>
 
-            <div className="mt-16">
-              <div className="flex items-center gap-3 mb-6">
-                <HiAcademicCap className="text-2xl text-primary-600" />
-                <h3 className="text-2xl font-bold text-gray-900">Education</h3>
+            <div className="mt-20">
+              <div className="flex items-center gap-3 mb-8">
+                <HiAcademicCap className="text-2xl text-blue-500" />
+                <h3 className="text-2xl font-playfair font-bold text-white">Education</h3>
               </div>
               <TimelineItem
                 date="Expected May 2026"

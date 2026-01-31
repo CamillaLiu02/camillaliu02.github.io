@@ -33,21 +33,21 @@ export default function Navigation() {
       className={cn(
         'sticky top-0 z-50 w-full transition-all duration-300',
         scrolled
-          ? 'bg-white/80 backdrop-blur-lg shadow-sm border-b border-gray-200'
+          ? 'bg-gray-950/80 backdrop-blur-lg shadow-sm border-b border-gray-800'
           : 'bg-transparent'
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-6 sm:px-8 lg:px-12">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+          {/* Logo - Left */}
           <Link
             href="/"
-            className="text-xl font-display font-bold text-gray-900 hover:text-primary-600 transition-colors"
+            className="text-lg font-playfair font-bold text-white hover:text-blue-400 transition-colors whitespace-nowrap"
           >
             Chang Liu
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Center */}
           <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item) => (
               <Link
@@ -56,8 +56,8 @@ export default function Navigation() {
                 className={cn(
                   'px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200',
                   pathname === item.href
-                    ? 'bg-primary-100 text-primary-700'
-                    : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-300 hover:bg-gray-800 hover:text-white'
                 )}
               >
                 {item.name}
@@ -68,7 +68,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
+            className="md:hidden p-2 rounded-lg text-gray-300 hover:bg-gray-800 transition-colors"
             aria-label="Toggle menu"
           >
             {isOpen ? <HiX size={24} /> : <HiMenu size={24} />}
@@ -84,7 +84,7 @@ export default function Navigation() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden border-t border-gray-200 bg-white"
+            className="md:hidden border-t border-gray-800 bg-gray-900"
           >
             <div className="px-4 py-3 space-y-1">
               {navItems.map((item) => (
@@ -95,8 +95,8 @@ export default function Navigation() {
                   className={cn(
                     'block px-4 py-3 rounded-lg text-base font-medium transition-colors',
                     pathname === item.href
-                      ? 'bg-primary-100 text-primary-700'
-                      : 'text-gray-700 hover:bg-gray-100'
+                      ? 'bg-blue-600 text-white'
+                      : 'text-gray-300 hover:bg-gray-800'
                   )}
                 >
                   {item.name}

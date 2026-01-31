@@ -3,6 +3,9 @@ import Link from "next/link";
 import { HiArrowRight, HiCode, HiPencilAlt, HiLightningBolt } from "react-icons/hi";
 import { getFeaturedProjects } from "@/lib/projects";
 import ProjectCard from "@/components/project/ProjectCard";
+import InteractiveSphere from "@/components/ui/InteractiveSphere";
+import HeroScroll from "@/components/ui/HeroScroll";
+import ScrollFade from "@/components/ui/ScrollFade";
 
 export default function Home() {
   const featuredProjects = getFeaturedProjects();
@@ -10,147 +13,135 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center space-y-8">
-            <div className="inline-block">
-              <span className="inline-block px-4 py-2 bg-gray-100 text-gray-700 rounded-md text-sm font-medium mb-4 border border-gray-200">
-                Available for opportunities
-              </span>
-            </div>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-gray-900 tracking-tight">
-              Hi, I'm{" "}
-              <span className="text-gray-800 border-b-4 border-gray-800">
-                Chang Liu
-              </span>
-            </h1>
-            <p className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Full-Stack Developer & HRI Researcher building robust systems and
-              intuitive interfaces through research, thoughtful design, and scalable engineering.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-              <Link
-                href="/projects"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gray-800 text-white rounded-md font-semibold hover:bg-gray-700 transition-colors"
-              >
-                View My Work
-                <HiArrowRight className="text-xl" />
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-gray-800 rounded-md font-semibold hover:bg-gray-50 border-2 border-gray-800 transition-colors"
-              >
-                Get in Touch
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroScroll />
 
       {/* About Snippet */}
-      <section className="py-20 bg-gray-50 border-y border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <ScrollFade>
+        <section className="py-24 bg-gray-900 border-y border-gray-800">
+          <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
-            <div className="bg-white rounded-md p-8 border border-gray-200 hover:border-gray-800 transition-colors">
-              <div className="w-12 h-12 bg-gray-800 rounded-md flex items-center justify-center mb-4">
-                <HiCode className="text-2xl text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
-                End-to-end software development
-              </h3>
-              <p className="text-gray-600">
-                Full-stack development across frontend, backend, and APIs, with experience in modern frameworks, data handling, and scalable system design.
-              </p>
-            </div>
+              <ScrollFade delay={100}>
+                <div className="bg-gray-800 rounded-sm p-10 border border-gray-700 hover:border-gray-600 transition-all duration-300">
+                  <div className="w-12 h-12 bg-white rounded-sm flex items-center justify-center mb-6">
+                    <HiCode className="text-2xl text-gray-900" />
+                  </div>
+                  <h3 className="text-xl font-playfair font-bold text-white mb-3 leading-tight">
+                    End-to-end software development
+                  </h3>
+                  <p className="text-gray-400 font-lora text-sm leading-relaxed">
+                    Full-stack development across frontend, backend, and APIs, with experience in modern frameworks, data handling, and scalable system design.
+                  </p>
+                </div>
+              </ScrollFade>
 
-            <div className="bg-white rounded-md p-8 border border-gray-200 hover:border-gray-800 transition-colors">
-              <div className="w-12 h-12 bg-gray-800 rounded-md flex items-center justify-center mb-4">
-                <HiPencilAlt className="text-2xl text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
-                Human-centered design informed by research
-              </h3>
-              <p className="text-gray-600">
-                User research, interaction design, prototyping, and design systems grounded in usability, accessibility, and real-world constraints.
-              </p>
-            </div>
+              <ScrollFade delay={200}>
+                <div className="bg-gray-800 rounded-sm p-10 border border-gray-700 hover:border-gray-600 transition-all duration-300">
+                  <div className="w-12 h-12 bg-white rounded-sm flex items-center justify-center mb-6">
+                    <HiPencilAlt className="text-2xl text-gray-900" />
+                  </div>
+                  <h3 className="text-xl font-playfair font-bold text-white mb-3 leading-tight">
+                    Human-centered design informed by research
+                  </h3>
+                  <p className="text-gray-400 font-lora text-sm leading-relaxed">
+                    User research, interaction design, prototyping, and design systems grounded in usability, accessibility, and real-world constraints.
+                  </p>
+                </div>
+              </ScrollFade>
 
-            <div className="bg-white rounded-md p-8 border border-gray-200 hover:border-gray-800 transition-colors">
-              <div className="w-12 h-12 bg-gray-800 rounded-md flex items-center justify-center mb-4">
-                <HiLightningBolt className="text-2xl text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">
-                Applied computing and emerging technologies
-              </h3>
-              <p className="text-gray-600">
-                Exploring AR/VR, robotics, and intelligent systems through hands-on experimentation, prototyping, and research-driven development.
-              </p>
+              <ScrollFade delay={300}>
+                <div className="bg-gray-800 rounded-sm p-10 border border-gray-700 hover:border-gray-600 transition-all duration-300">
+                  <div className="w-12 h-12 bg-white rounded-sm flex items-center justify-center mb-6">
+                    <HiLightningBolt className="text-2xl text-gray-900" />
+                  </div>
+                  <h3 className="text-xl font-playfair font-bold text-white mb-3 leading-tight">
+                    Applied computing and emerging technologies
+                  </h3>
+                  <p className="text-gray-400 font-lora text-sm leading-relaxed">
+                    Exploring AR/VR, robotics, and intelligent systems through hands-on experimentation, prototyping, and research-driven development.
+                  </p>
+                </div>
+              </ScrollFade>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollFade>
 
       {/* Featured Projects */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <h2 className="text-4xl font-display font-bold text-gray-900 mb-4">
-              Featured Projects
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl">
-              A selection of recent work spanning human-centered design, software engineering, and applied research.
-            </p>
-          </div>
+      <ScrollFade>
+        <section className="py-24">
+          <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+            <ScrollFade>
+              <div className="mb-16">
+                <h2 className="text-5xl font-playfair font-bold text-white mb-4 leading-tight">
+                  Featured Projects
+                </h2>
+                <p className="text-base text-gray-400 max-w-2xl font-lora leading-relaxed">
+                  A selection of recent work spanning human-centered design, software engineering, and applied research.
+                </p>
+              </div>
+            </ScrollFade>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {featuredProjects.map((project, index) => (
-              <ProjectCard
-                key={project.frontmatter.slug}
-                project={project.frontmatter}
-                index={index}
-              />
-            ))}
-          </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {featuredProjects.map((project, index) => (
+                <ScrollFade key={project.frontmatter.slug} delay={index * 100}>
+                  <ProjectCard
+                    project={project.frontmatter}
+                    index={index}
+                  />
+                </ScrollFade>
+              ))}
+            </div>
 
-          <div>
-            <Link
-              href="/projects"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-800 text-white rounded-md font-semibold hover:bg-gray-700 transition-colors"
-            >
-              View All Projects
-              <HiArrowRight />
-            </Link>
+            <ScrollFade delay={400}>
+              <div>
+                <Link
+                  href="/projects"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 rounded-sm font-semibold hover:bg-gray-100 transition-colors text-sm tracking-wide uppercase"
+                >
+                  View All Projects
+                  <HiArrowRight />
+                </Link>
+              </div>
+            </ScrollFade>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollFade>
 
       {/* Quick Links / CTA */}
-      <section className="py-20 bg-gray-800 text-white border-t border-gray-700">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-display font-bold mb-4">
-            Let's Work Together
-          </h2>
-          <p className="text-xl mb-8 text-gray-300">
-            I'm currently looking for UI/UX design and product design
-            opportunities. Let's create something amazing!
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/resume"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-gray-800 rounded-md font-semibold hover:bg-gray-100 transition-colors"
-            >
-              View Resume
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent text-white rounded-md font-semibold hover:bg-gray-700 border-2 border-white transition-colors"
-            >
-              Contact Me
-            </Link>
+      <ScrollFade>
+        <section className="py-24 bg-gray-900 text-white border-t border-gray-800">
+          <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+            <ScrollFade>
+              <h2 className="text-5xl font-playfair font-bold mb-6 leading-tight">
+                Let's Work Together
+              </h2>
+            </ScrollFade>
+            <ScrollFade delay={100}>
+              <p className="text-lg text-gray-300 mb-10 font-lora leading-relaxed">
+                I'm currently looking for UI/UX design and product design
+                opportunities. Let's create something amazing!
+              </p>
+            </ScrollFade>
+            <ScrollFade delay={200}>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <Link
+                  href="/resume"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white text-gray-900 rounded-sm font-semibold hover:bg-gray-100 transition-colors text-sm tracking-wide uppercase"
+                >
+                  View Resume
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-transparent text-white rounded-sm font-semibold hover:bg-gray-800 border border-white transition-colors text-sm tracking-wide uppercase"
+                >
+                  Contact Me
+                </Link>
+              </div>
+            </ScrollFade>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollFade>
     </div>
   );
 }
