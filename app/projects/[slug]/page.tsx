@@ -234,7 +234,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                       href={frontmatter.links.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors"
                     >
                       <FaGithub />
                       GitHub

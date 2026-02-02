@@ -1,67 +1,173 @@
 import Image from "next/image";
 import Link from "next/link";
-import { HiArrowRight, HiCode, HiPencilAlt, HiLightningBolt } from "react-icons/hi";
+import { HiArrowRight } from "react-icons/hi";
 import { getFeaturedProjects } from "@/lib/projects";
+import { formatDate } from "@/lib/utils/cn";
 import ProjectCard from "@/components/project/ProjectCard";
-import InteractiveSphere from "@/components/ui/InteractiveSphere";
 import HeroScroll from "@/components/ui/HeroScroll";
 import ScrollFade from "@/components/ui/ScrollFade";
+import StoryTabs from "@/components/ui/StoryTabs";
+import RotatingRoles from "@/components/ui/RotatingRoles";
+import IntroScrollText from "@/components/ui/IntroScrollText";
+import ToolboxReveal from "@/components/ui/ToolboxReveal";
+import TimelineItem from "@/components/ui/Timeline";
+import { HiAcademicCap, HiBriefcase } from "react-icons/hi";
+import SelectedWorksDeck from "@/components/ui/SelectedWorksDeck";
 
 export default function Home() {
   const featuredProjects = getFeaturedProjects();
+  const featuredAvatars = [
+    "/images/avatars/ur3e.png",
+    "/images/avatars/unity.png",
+    "/images/avatars/ux.png",
+  ];
+  const skills = {
+    Programming: [
+      "Java, JavaScript/TypeScript",
+      "Python, Kotlin",
+      "C/C++/C#",
+      "SQL & NoSQL",
+    ],
+    "Frameworks & Platforms": [
+      "React/Next.js, Node.js/Express",
+      "Spring Boot & RESTful APIs",
+      "ROS Noetic + MoveIt",
+      "Unity, Android (Kotlin)",
+    ],
+    "Data & Infra": [
+      "Elasticsearch & Kafka",
+      "Docker & Kubernetes",
+      "Git & CI/CD",
+      "GCP/AWS",
+    ],
+    "Research & UX": [
+      "User interviews & surveys",
+      "Contextual inquiry",
+      "Usability testing",
+      "Personas & journey maps",
+      "VR/AR prototyping",
+    ],
+    Languages: ["English (fluent)", "Chinese (native)", "Korean (beginner)"],
+    Leadership: [
+      "Asian Women Basketball Club — Co-founder & VP",
+      "Adventure Learning Program — Facilitator",
+    ],
+  };
 
   return (
-    <div>
+    <div id="top" className="font-apple">
       {/* Hero Section */}
       <HeroScroll />
 
-      {/* About Snippet */}
+      {/* Intro Paragraph */}
       <ScrollFade>
-        <section className="py-24 bg-gray-900 border-y border-gray-800">
-          <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <section id="intro" className="py-20 scroll-mt-32">
+          <div className="max-w-screen-2xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+            <IntroScrollText>
+              <p className="text-3xl sm:text-4xl lg:text-5xl font-apple text-black leading-[1.2] tracking-tight max-w-none mx-auto">
+                Hi, I’m Chang Liu,
+                <span className="block sm:inline"> a </span>
+                <RotatingRoles />
+                <span className="block sm:inline"> focusing on human-centered design🦾. I study and build interactive systems🫆 that bridge thoughtful engineering🚀 and intuitive user experiences💡.</span>
+              </p>
+            </IntroScrollText>
+          </div>
+        </section>
+      </ScrollFade>
 
-              <ScrollFade delay={100}>
-                <div className="bg-gray-800 rounded-sm p-10 border border-gray-700 hover:border-gray-600 transition-all duration-300">
-                  <div className="w-12 h-12 bg-white rounded-sm flex items-center justify-center mb-6">
-                    <HiCode className="text-2xl text-gray-900" />
-                  </div>
-                  <h3 className="text-xl font-playfair font-bold text-white mb-3 leading-tight">
-                    End-to-end software development
-                  </h3>
-                  <p className="text-gray-400 font-lora text-sm leading-relaxed">
-                    Full-stack development across frontend, backend, and APIs, with experience in modern frameworks, data handling, and scalable system design.
-                  </p>
-                </div>
-              </ScrollFade>
+      {/* Experience & Education */}
+      <ScrollFade>
+        <section id="experience" className="py-24 scroll-mt-24">
+          <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+            <div className="text-center mb-14">
+              <p className="text-xs uppercase tracking-[0.35em] text-slate-500">
+                Experience & Education
+              </p>
+              <h2 className="text-4xl sm:text-5xl font-apple font-bold text-slate-900 mt-4 leading-tight">
+                My Journey 🛵
+              </h2>
+              <p className="text-base text-slate-600 max-w-2xl mx-auto mt-4 font-apple leading-relaxed">
+                Recent roles and academic focus areas that shape my design and engineering work.
+              </p>
+            </div>
 
-              <ScrollFade delay={200}>
-                <div className="bg-gray-800 rounded-sm p-10 border border-gray-700 hover:border-gray-600 transition-all duration-300">
-                  <div className="w-12 h-12 bg-white rounded-sm flex items-center justify-center mb-6">
-                    <HiPencilAlt className="text-2xl text-gray-900" />
-                  </div>
-                  <h3 className="text-xl font-playfair font-bold text-white mb-3 leading-tight">
-                    Human-centered design informed by research
-                  </h3>
-                  <p className="text-gray-400 font-lora text-sm leading-relaxed">
-                    User research, interaction design, prototyping, and design systems grounded in usability, accessibility, and real-world constraints.
-                  </p>
-                </div>
-              </ScrollFade>
+            <div className="rounded-3xl border border-emerald-100/80 bg-white/80 p-8 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur">
+              <div className="flex items-center gap-4 mb-10">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-emerald-400 via-green-400 to-lime-400 text-white shadow-sm">
+                  <HiBriefcase className="text-xl" />
+                </span>
+                <h3 className="text-2xl font-apple font-bold text-slate-900">Experience</h3>
+              </div>
+              <TimelineItem
+                date="Oct 2025 – Present"
+                title="Undergraduate Research Assistant"
+                organization="People and Robots Lab, UW–Madison"
+                description="Integrating Meta Quest 3 with UR3e via ROS Noetic + Unity/RAMPA++; debugging motion planning, refining VR→robot pipelines, and gathering user feedback for immersive teleoperation."
+              />
+              <TimelineItem
+                date="May 2025 – Aug 2025"
+                title="Software Development Intern"
+                organization="RedBing LLC, Atlanta"
+                description="Shipped commerce search features with Kafka event streams, Elasticsearch relevance tuning, Spring Boot microservices, and a Flask scoring API to improve retrieval quality."
+              />
+              <TimelineItem
+                date="May 2024 – Aug 2024"
+                title="System Development Intern"
+                organization="ZhengGong Technology, Beijing"
+                description="Fixed device programs and firmware issues, executed product testing cycles, and led product publicity updates that contributed to a ~20% revenue lift."
+                isLast
+              />
+            </div>
 
-              <ScrollFade delay={300}>
-                <div className="bg-gray-800 rounded-sm p-10 border border-gray-700 hover:border-gray-600 transition-all duration-300">
-                  <div className="w-12 h-12 bg-white rounded-sm flex items-center justify-center mb-6">
-                    <HiLightningBolt className="text-2xl text-gray-900" />
-                  </div>
-                  <h3 className="text-xl font-playfair font-bold text-white mb-3 leading-tight">
-                    Applied computing and emerging technologies
-                  </h3>
-                  <p className="text-gray-400 font-lora text-sm leading-relaxed">
-                    Exploring AR/VR, robotics, and intelligent systems through hands-on experimentation, prototyping, and research-driven development.
-                  </p>
-                </div>
-              </ScrollFade>
+            <div className="mt-12 rounded-3xl border border-emerald-100/80 bg-white/80 p-8 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur">
+              <div className="flex items-center gap-4 mb-10">
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-emerald-400 via-green-400 to-lime-400 text-white shadow-sm">
+                  <HiAcademicCap className="text-xl" />
+                </span>
+                <h3 className="text-2xl font-apple font-bold text-slate-900">Education</h3>
+              </div>
+              <TimelineItem
+                date="Sep 2022 – May 2026 (Expected)"
+                title="B.S. Computer Science"
+                organization="University of Wisconsin–Madison"
+                description="Coursework: HCI, Software Engineering, Database Systems, Algorithms, Operating Systems."
+                tags={["Computer Science"]}
+              />
+              <TimelineItem
+                date="Sep 2022 – May 2026 (Expected)"
+                title="B.S. Data Science"
+                organization="University of Wisconsin–Madison"
+                description="Coursework: Machine Learning, Data Science, Computer Vision, Statistical Modeling, Data Engineering."
+                tags={["Data Science"]}
+              />
+              <TimelineItem
+                date="Sep 2018 – May 2022"
+                title="Manitowoc Lutheran High School"
+                organization="Manitowoc, Wisconsin"
+                description="Experience: First Robotics Team (7103) Programmer & Competition Coach; Honor Roll student. Coursework: Aerospace Engineering, Honor Physics, Honor Chemistry, AP Computer Science, AP Calculus."
+                isLast
+              />
+            </div>
+          </div>
+        </section>
+      </ScrollFade>
+
+      {/* Toolbox */}
+      <ScrollFade>
+        <section id="toolbox" className="py-28 scroll-mt-24">
+          <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10">
+            <div className="grid gap-10 lg:grid-cols-[280px_1fr] lg:items-start">
+              <div>
+                <h2 className="text-4xl sm:text-5xl font-apple font-bold text-slate-900">
+                  My Toolbox 🧰
+                </h2>
+                <p className="text-base sm:text-lg text-slate-600 font-apple mt-4">
+                  Tools I use to design, build, and ship.
+                </p>
+              </div>
+              <div>
+                <ToolboxReveal />
+              </div>
             </div>
           </div>
         </section>
@@ -69,35 +175,97 @@ export default function Home() {
 
       {/* Featured Projects */}
       <ScrollFade>
-        <section className="py-24">
-          <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+        <section id="projects" className="py-24 scroll-mt-24">
+          <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10">
             <ScrollFade>
               <div className="mb-16">
-                <h2 className="text-5xl font-playfair font-bold text-white mb-4 leading-tight">
+                <h2 className="text-5xl font-apple font-bold text-slate-900 mb-4 leading-tight">
                   Featured Projects
                 </h2>
-                <p className="text-base text-gray-400 max-w-2xl font-lora leading-relaxed">
+                <p className="text-base text-slate-600 max-w-2xl font-apple leading-relaxed">
                   A selection of recent work spanning human-centered design, software engineering, and applied research.
                 </p>
               </div>
             </ScrollFade>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-              {featuredProjects.map((project, index) => (
-                <ScrollFade key={project.frontmatter.slug} delay={index * 100}>
-                  <ProjectCard
-                    project={project.frontmatter}
-                    index={index}
-                  />
-                </ScrollFade>
-              ))}
+            <div className="mb-12 space-y-8">
+              {featuredProjects.map((project, index) => {
+                const isOdd = index % 2 === 0;
+                const avatarSrc =
+                  featuredAvatars[index] ||
+                  project.frontmatter.cardImage ||
+                  project.frontmatter.heroImage;
+                return (
+                  <ScrollFade key={project.frontmatter.slug} delay={index * 120}>
+                    <div
+                      className={`grid grid-cols-1 items-center gap-4 ${
+                        isOdd
+                          ? 'md:grid-cols-[220px_1fr]'
+                          : 'md:grid-cols-[1fr_220px]'
+                      }`}
+                    >
+                      <div
+                        className={`flex items-center justify-center ${
+                          isOdd ? '' : 'md:order-2 md:flex-row-reverse'
+                        }`}
+                      >
+                      <div className="relative h-44 w-44 sm:h-52 sm:w-52 overflow-hidden">
+                        <Image
+                          src={avatarSrc}
+                          alt={`${project.frontmatter.title} avatar`}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="hidden md:block h-[2px] w-24 bg-slate-300/80" />
+                    </div>
+                    <Link
+                      href={`/projects/${project.frontmatter.slug}`}
+                      className={`group block font-apple ${
+                        isOdd ? '' : 'md:order-1'
+                      }`}
+                    >
+                      <div className="rounded-[28px] overflow-hidden shadow-[0_24px_80px_rgba(15,23,42,0.18)] ring-1 ring-white/60 bg-gradient-to-br from-white/65 via-sky-200/40 to-indigo-200/35 hover:-translate-y-1 transition-all duration-300">
+                        <div className="p-6 sm:p-7 flex flex-col border border-white/40 bg-white/30 backdrop-blur-2xl">
+                          <div className="flex flex-wrap gap-2 mb-3">
+                            {project.frontmatter.tags.slice(0, 3).map((tag) => (
+                              <span
+                                key={tag}
+                                className="text-xs font-semibold px-3 py-1 rounded-full border backdrop-blur bg-white/45 text-slate-900 border-white/50"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                          <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
+                            {project.frontmatter.title}
+                          </h3>
+                          <p className="text-slate-700 text-sm sm:text-base mb-6">
+                            {project.frontmatter.shortDescription}
+                          </p>
+                          <div className="mt-auto flex items-center justify-between">
+                            <span className="text-xs uppercase tracking-[0.2em] text-slate-600">
+                              {formatDate(project.frontmatter.date)}
+                            </span>
+                            <span className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold shadow-sm border backdrop-blur bg-white/55 text-slate-900 border-white/60">
+                              View case
+                              <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                  </ScrollFade>
+                );
+              })}
             </div>
 
             <ScrollFade delay={400}>
               <div>
                 <Link
                   href="/projects"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 rounded-sm font-semibold hover:bg-gray-100 transition-colors text-sm tracking-wide uppercase"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-sm font-semibold hover:bg-slate-800 transition-colors text-sm tracking-wide uppercase"
                 >
                   View All Projects
                   <HiArrowRight />
@@ -108,37 +276,138 @@ export default function Home() {
         </section>
       </ScrollFade>
 
+      {/* Selected Works */}
+      <ScrollFade>
+        <section className="py-24">
+          <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10">
+            <ScrollFade>
+              <div className="mb-12">
+                <h2 className="text-5xl font-apple font-bold text-slate-900 mb-4 leading-tight">
+                  Selected Works
+                </h2>
+                <p className="text-base text-slate-600 max-w-2xl font-apple leading-relaxed">
+                  A curated set of visual explorations and concept studies.
+                </p>
+              </div>
+            </ScrollFade>
+            <SelectedWorksDeck />
+          </div>
+        </section>
+      </ScrollFade>
+
       {/* Quick Links / CTA */}
       <ScrollFade>
-        <section className="py-24 bg-gray-900 text-white border-t border-gray-800">
+        <section id="resume" className="py-24 text-slate-900 border-t border-stone-200 scroll-mt-24">
           <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
             <ScrollFade>
-              <h2 className="text-5xl font-playfair font-bold mb-6 leading-tight">
-                Let's Work Together
+              <h2 className="text-5xl font-apple font-bold mb-6 leading-tight">
+                Let’s Connect
               </h2>
             </ScrollFade>
             <ScrollFade delay={100}>
-              <p className="text-lg text-gray-300 mb-10 font-lora leading-relaxed">
-                I'm currently looking for UI/UX design and product design
-                opportunities. Let's create something amazing!
+              <p className="text-lg text-slate-600 mb-10 font-apple leading-relaxed">
+                I’m exploring full-time roles, research opportunities, and graduate
+                programs. I’d love to connect and share my work.
               </p>
             </ScrollFade>
             <ScrollFade delay={200}>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <Link
                   href="/resume"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-white text-gray-900 rounded-sm font-semibold hover:bg-gray-100 transition-colors text-sm tracking-wide uppercase"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-slate-900 text-white rounded-sm font-semibold hover:bg-slate-800 transition-colors text-sm tracking-wide uppercase"
                 >
                   View Resume
                 </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-transparent text-white rounded-sm font-semibold hover:bg-gray-800 border border-white transition-colors text-sm tracking-wide uppercase"
-                >
-                  Contact Me
-                </Link>
               </div>
             </ScrollFade>
+          </div>
+        </section>
+      </ScrollFade>
+
+      {/* Contact Section */}
+      <ScrollFade>
+        <section id="contact" className="py-24 scroll-mt-24">
+          <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10">
+            <div className="grid grid-cols-1 gap-10 items-stretch">
+              <div className="h-full rounded-[28px] border border-stone-200/80 bg-white/90 p-8 sm:p-10 shadow-[0_24px_80px_rgba(15,23,42,0.12)] backdrop-blur mx-auto">
+                <div className="mb-8">
+                  <p className="text-xs uppercase tracking-[0.35em] text-slate-500">Get in touch</p>
+                  <h2 className="text-4xl sm:text-5xl font-apple font-bold text-slate-900 mt-3">
+                    Contact.
+                  </h2>
+                  <p className="text-sm sm:text-base text-slate-600 mt-3">
+                    Drop a note and I’ll get back to you soon.
+                  </p>
+                </div>
+
+                <form
+                  action="mailto:changliu5101@gmail.com"
+                  method="GET"
+                  encType="text/plain"
+                  className="space-y-6"
+                >
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label
+                        htmlFor="contact-name"
+                        className="block text-sm font-medium text-slate-600 mb-2"
+                      >
+                        Name
+                      </label>
+                      <input
+                        type="text"
+                        id="contact-name"
+                        name="name"
+                        required
+                        className="w-full px-4 py-3 border border-stone-200 rounded-xl bg-white text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                        placeholder="Your name"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="contact-email"
+                        className="block text-sm font-medium text-slate-600 mb-2"
+                      >
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        id="contact-email"
+                        name="email"
+                        required
+                        className="w-full px-4 py-3 border border-stone-200 rounded-xl bg-white text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                        placeholder="you@email.com"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="contact-message"
+                      className="block text-sm font-medium text-slate-600 mb-2"
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      id="contact-message"
+                      name="body"
+                      rows={5}
+                      required
+                      className="w-full px-4 py-3 border border-stone-200 rounded-xl bg-white text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                      placeholder="Tell me about your project or opportunity..."
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full px-6 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-emerald-500 to-lime-500 hover:from-emerald-600 hover:to-lime-600 transition-colors"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              </div>
+
+            </div>
           </div>
         </section>
       </ScrollFade>

@@ -49,16 +49,16 @@ export default function AboutPage() {
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-gray-950">
+      <div className="min-h-screen bg-[#f7f4ee]">
         {/* Hero */}
-        <section className="bg-gray-900 border-b border-gray-800 py-24">
+        <section className="bg-white border-b border-stone-200 py-24">
           <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
-                <h1 className="text-6xl font-playfair font-bold text-white mb-8 leading-tight">
+                <h1 className="text-6xl font-apple font-bold text-slate-900 mb-8 leading-tight">
                   About Me
                 </h1>
-                <div className="space-y-6 text-lg text-gray-300 leading-relaxed font-lora">
+                <div className="space-y-6 text-lg text-slate-600 leading-relaxed font-apple">
                   <p>Hi! My name is <strong>Chang (Camilla) Liu</strong>! </p>
                   <p>
                     I'm a <strong>computer science student and researcher</strong> focused on building <strong>intelligent, human-centered systems</strong>. My interests lie at the intersection of <strong>robotics and human–computer interaction</strong>, where <strong>full-stack software, AI-driven decision-making, and data-informed system design</strong> come together in real-world applications.
@@ -70,7 +70,7 @@ export default function AboutPage() {
                     {[ 'Full-stack engineering', 'HCI/HRI research', 'UI/UX design', 'Data & ML' ].map((tag) => (
                       <span
                         key={tag}
-                        className="inline-flex items-center px-4 py-2 rounded-sm text-sm font-semibold text-white bg-gray-800 border border-gray-700"
+                        className="inline-flex items-center px-4 py-2 rounded-sm text-sm font-semibold text-slate-700 bg-white border border-stone-200"
                       >
                         {tag}
                       </span>
@@ -78,7 +78,7 @@ export default function AboutPage() {
                   </div>
                 </div>
               </div>
-              <div className="relative h-[560px] rounded-lg overflow-hidden shadow-2xl border border-gray-800">
+              <div className="relative h-[560px] rounded-lg overflow-hidden shadow-2xl border border-stone-200">
                 <Image
                   src="/resume/liu.png"
                   alt="Chang Liu portrait"
@@ -93,25 +93,25 @@ export default function AboutPage() {
         </section>
 
         {/* Skills */}
-        <section className="py-24 bg-gray-950 border-b border-gray-800">
+        <section className="py-24 bg-[#f7f4ee] border-b border-stone-200">
           <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
-            <h2 className="text-5xl font-playfair font-bold text-white mb-16 text-center leading-tight">
+            <h2 className="text-5xl font-apple font-bold text-slate-900 mb-16 text-center leading-tight">
               Skills & Expertise
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {Object.entries(skills).map(([category, items]) => (
                 <div
                   key={category}
-                  className="bg-gray-800 rounded-sm p-8 border border-gray-700 hover:border-gray-600 transition-colors"
+                  className="bg-white rounded-sm p-8 border border-stone-200 hover:border-stone-300 transition-colors"
                 >
-                  <h3 className="text-xl font-playfair font-bold text-white mb-6">
+                  <h3 className="text-xl font-apple font-bold text-slate-900 mb-6">
                     {category}
                   </h3>
                   <ul className="space-y-3">
                     {items.map((skill) => (
                       <li
                         key={skill}
-                        className="text-gray-300 font-lora text-sm flex items-center gap-3"
+                        className="text-slate-600 font-apple text-sm flex items-center gap-3"
                       >
                         <span className="w-2 h-2 bg-blue-500 rounded-full" />
                         {skill}
@@ -125,16 +125,16 @@ export default function AboutPage() {
         </section>
 
         {/* Timeline */}
-        <section className="py-24 bg-gray-900 border-b border-gray-800">
+        <section className="py-24 bg-[#f1eee7] border-b border-stone-200">
           <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
-            <h2 className="text-5xl font-playfair font-bold text-white mb-16 text-center leading-tight">
+            <h2 className="text-5xl font-apple font-bold text-slate-900 mb-16 text-center leading-tight">
               Experience & Education
             </h2>
 
             <div>
               <div className="flex items-center gap-3 mb-8">
                 <HiBriefcase className="text-2xl text-blue-500" />
-                <h3 className="text-2xl font-playfair font-bold text-white">Experience</h3>
+                <h3 className="text-2xl font-apple font-bold text-slate-900">Experience</h3>
               </div>
               <TimelineItem
                 date="Oct 2025 – Present"
@@ -160,7 +160,7 @@ export default function AboutPage() {
             <div className="mt-20">
               <div className="flex items-center gap-3 mb-8">
                 <HiAcademicCap className="text-2xl text-blue-500" />
-                <h3 className="text-2xl font-playfair font-bold text-white">Education</h3>
+                <h3 className="text-2xl font-apple font-bold text-slate-900">Education</h3>
               </div>
               <TimelineItem
                 date="Expected May 2026"

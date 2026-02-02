@@ -52,14 +52,14 @@ export default function ProjectsClient({
 
   return (
     <PageTransition>
-      <div className="min-h-screen bg-gray-950 py-24">
-        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div className="min-h-screen bg-[#f7f4ee] py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-6xl font-playfair font-bold text-white mb-6 leading-tight">
+            <h1 className="text-6xl font-apple font-bold text-slate-900 mb-6 leading-tight">
               My Projects
             </h1>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto font-lora">
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto font-apple">
               Explore my work in technical development, user research, and UI/UX design!
             </p>
           </div>
@@ -67,13 +67,13 @@ export default function ProjectsClient({
           {/* Search */}
           <div className="mb-12">
             <div className="relative max-w-md mx-auto">
-              <HiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl" />
+              <HiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-xl" />
               <input
                 type="text"
                 placeholder="Search projects..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 border border-gray-600 rounded-sm bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full pl-12 pr-4 py-3 border border-stone-200 rounded-sm bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
           </div>
@@ -100,7 +100,7 @@ export default function ProjectsClient({
             </div>
           ) : (
             <div className="text-center py-24">
-              <p className="text-gray-500 text-lg">
+              <p className="text-slate-500 text-lg">
                 No projects found. Try adjusting your filters.
               </p>
             </div>

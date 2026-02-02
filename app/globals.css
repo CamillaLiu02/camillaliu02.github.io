@@ -10,18 +10,40 @@ html {
 
 html, body {
   height: 100%;
-  background: #0a0a0a;
-  color: #ffffff;
+  background: #f7f4ee;
+  color: #0f172a;
+  background-image:
+    radial-gradient(1200px 800px at 10% 10%, rgba(255, 214, 165, 0.35), transparent 60%),
+    radial-gradient(900px 700px at 90% 20%, rgba(186, 230, 253, 0.35), transparent 55%),
+    radial-gradient(900px 700px at 50% 90%, rgba(255, 192, 203, 0.25), transparent 60%),
+    linear-gradient(180deg, rgba(247, 244, 238, 0.9), rgba(247, 244, 238, 1));
+  background-attachment: fixed;
 }
 
 /* Clean background */
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #0a0a0a;
-  color: #ffffff;
+  background: transparent;
+  color: #0f172a;
   min-height: 100vh;
   cursor: none;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* Hide default cursor on interactive elements */
@@ -144,6 +166,66 @@ a:hover, button:hover, [role="button"]:hover {
   animation: toast-fade-out 0.3s ease-in forwards;
 }
 
+@keyframes orbit-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-converge {
+  0% {
+    transform: translate(var(--grid-x), var(--grid-y));
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(var(--angle)) translateX(var(--orbit-radius)) rotate(calc(-1 * var(--angle)));
+    opacity: 1;
+  }
+}
+
+.orbit-rotate {
+  animation: orbit-rotate 22s linear infinite;
+  transform-origin: center;
+}
+
+.orbit-counter-rotate {
+  animation: orbit-rotate 22s linear infinite reverse;
+  transform-origin: center;
+}
+
+.orbit-item {
+  will-change: transform;
+}
+
+.orbit-converge {
+  animation: orbit-converge 1.6s cubic-bezier(0.2, 0.6, 0.2, 1) forwards;
+}
+
+.grid-position {
+  transform: translate(var(--grid-x), var(--grid-y));
+}
+
+@keyframes grid-appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+.grid-appear {
+  opacity: 0;
+  animation: grid-appear 0.55s ease-out forwards;
+}
+
 @keyframes glitch-fade {
   0%, 100% {
     opacity: 1;
@@ -197,6 +279,111 @@ a:hover, button:hover, [role="button"]:hover {
 .glitch-wrapper {
   position: relative;
   overflow: hidden;
+}
+
+.tool-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.tool-marquee-track {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+  animation: tool-marquee-scroll 55s linear infinite;
+}
+
+.tool-marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.25rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.7);
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 0.95rem;
+  backdrop-filter: blur(6px);
+  white-space: nowrap;
+}
+
+.tool-marquee-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.tool-marquee-icon--placeholder {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 9999px;
+  background: rgba(15, 23, 42, 0.35);
+}
+
+.toolbox-pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.75);
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 1.05rem;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+  transform: translate(var(--mx, 0px), var(--my, 0px));
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: toolbox-float 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.toolbox-pill::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: inherit;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.18), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: -1;
+}
+
+.toolbox-pill:hover {
+  transform: translate(var(--mx, 0px), var(--my, 0px)) scale(1.03);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.14);
+}
+
+.toolbox-pill:hover::before {
+  opacity: 1;
+}
+
+@keyframes toolbox-float {
+  0%,
+  100% {
+    transform: translate(var(--mx, 0px), var(--my, 0px)) translateY(0px);
+  }
+  50% {
+    transform: translate(var(--mx, 0px), var(--my, 0px)) translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toolbox-pill {
+    animation: none;
+    transition: none;
+  }
+}
+
+@keyframes tool-marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .glitch-wrapper::before {

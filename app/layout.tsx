@@ -1,11 +1,23 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Lora } from "next/font/google";
+import {
+  Inter,
+  Playfair_Display,
+  Lora,
+  Fraunces,
+  Space_Grotesk,
+  Syne,
+  Instrument_Serif,
+  DM_Serif_Display,
+  Sora,
+  Manrope,
+} from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import CustomCursor from "@/components/ui/CustomCursor";
 import ScrollAnimations from "@/components/ui/ScrollAnimations";
 import Terminal from "@/components/ui/Terminal";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 import { TerminalProvider } from "@/components/ui/TerminalContext";
 
 const inter = Inter({
@@ -22,6 +34,50 @@ const playfair = Playfair_Display({
 
 const lora = Lora({
   variable: "--font-lora",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const syne = Syne({
+  variable: "--font-syne",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400"],
+});
+
+const dmSerifDisplay = DM_Serif_Display({
+  variable: "--font-dm-serif-display",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400"],
+});
+
+const sora = Sora({
+  variable: "--font-sora",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
   display: "swap",
 });
@@ -87,9 +143,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} ${lora.variable}`} style={{ fontFamily: 'var(--font-inter)' }}>
-      <body className="antialiased text-white bg-gray-950">
+    <html
+      lang="en"
+      className={`${inter.variable} ${playfair.variable} ${lora.variable} ${fraunces.variable} ${spaceGrotesk.variable} ${syne.variable} ${instrumentSerif.variable} ${dmSerifDisplay.variable} ${sora.variable} ${manrope.variable}`}
+      style={{ fontFamily: "var(--font-inter)" }}
+    >
+      <body className="antialiased text-slate-900 bg-[#f7f4ee]">
         <TerminalProvider>
+          <ScrollToTop />
           <ScrollAnimations />
           <CustomCursor />
           <Terminal />

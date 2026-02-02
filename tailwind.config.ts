@@ -39,6 +39,23 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         display: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        apple: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"SF Pro Text"',
+          '"SF Pro Display"',
+          'system-ui',
+          'sans-serif',
+        ],
+        playfair: ['var(--font-playfair)', 'serif'],
+        lora: ['var(--font-lora)', 'serif'],
+        fraunces: ['var(--font-fraunces)', 'serif'],
+        'space-grotesk': ['var(--font-space-grotesk)', 'system-ui', 'sans-serif'],
+        syne: ['var(--font-syne)', 'system-ui', 'sans-serif'],
+        'instrument-serif': ['var(--font-instrument-serif)', 'serif'],
+        'dm-serif-display': ['var(--font-dm-serif-display)', 'serif'],
+        sora: ['var(--font-sora)', 'system-ui', 'sans-serif'],
+        manrope: ['var(--font-manrope)', 'system-ui', 'sans-serif'],
       },
       typography: {
         DEFAULT: {
