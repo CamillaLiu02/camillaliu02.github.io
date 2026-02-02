@@ -21,9 +21,9 @@ export default function HeroScroll() {
         '/images/avatars/vr.png',
         '/images/avatars/ux.png',
         '/images/avatars/unity.png',
-        '/images/avatars/ur3e.png',
-        '/images/avatars/ur3e.png',
-        '/images/avatars/ur3e.png',
+        '/images/Artwork/17.png',
+        '/images/projects/course-enrollment/research/Bullseye Diagram.png',
+        '/images/projects/course-enrollment/research/Affinity Diagram.png',
       ];
 
         const gridColumns = 4;
