@@ -9,12 +9,17 @@ interface TerminalLine {
 }
 
 const pages = {
-  home: '/',
-  about: '/about',
-  projects: '/projects',
-  contact: '/contact',
+  home: '/#top',
+  me: '/#intro',
+  intro: '/#intro',
+  about: '/#intro',
+  projects: '/#projects',
+  works: '/#projects',
+  'projects/works': '/#projects',
+  projectsworks: '/#projects',
   resume: '/resume',
-};
+  contact: '/#contact',
+} as const;
 
 export default function Terminal() {
   const { isOpen, setIsOpen, lines, addLine, clearLines } = useTerminal();
@@ -148,17 +153,20 @@ export default function Terminal() {
     // Process commands
     if (trimmed === 'help') {
       addLine('output', 'Available commands:');
-      addLine('output', '  view <page>        - Navigate to page (home, about, projects, contact, resume)');
+      addLine('output', '  view <page>        - Navigate to section (Home, Me, Projects/Works, Resume, Contact)');
       addLine('output', '  ls                 - List available pages');
       addLine('output', '  clear              - Clear terminal');
       addLine('output', '  help               - Show this help message');
     } else if (trimmed === 'ls') {
-      addLine('output', 'home/  about/  projects/  contact/  resume/');
+      addLine('output', 'Home  Me  Projects/Works  Resume  Contact');
     } else if (trimmed === 'clear') {
       clearLines();
     } else if (trimmed.startsWith('view ')) {
       const page = trimmed.slice(5).trim().toLowerCase();
-      const url = pages[page as keyof typeof pages];
+      const normalizedPage = page.replace(/\s+/g, '').replace(/\/+$/, '');
+      const url =
+        pages[page as keyof typeof pages] ??
+        pages[normalizedPage as keyof typeof pages];
       
       if (url) {
         addLine('output', `Navigating to ${page}...`);
