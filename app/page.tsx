@@ -306,8 +306,7 @@ export default function Home() {
             </ScrollFade>
             <ScrollFade delay={100}>
               <p className="text-lg text-slate-600 mb-10 font-apple leading-relaxed">
-                I’m exploring full-time roles, research opportunities, and graduate
-                programs. I’d love to connect and share my work.
+                I’m always open to new opportunities and connections. I’d love to connect and share my work!
               </p>
             </ScrollFade>
             <ScrollFade delay={200}>
