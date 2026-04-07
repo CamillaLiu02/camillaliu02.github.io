@@ -17,6 +17,7 @@ import Footer from "@/components/layout/Footer";
 import CustomCursor from "@/components/ui/CustomCursor";
 import ScrollAnimations from "@/components/ui/ScrollAnimations";
 import ScrollToTop from "@/components/ui/ScrollToTop";
+import SpatialBackground from "@/components/ui/SpatialBackground";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -146,7 +147,8 @@ export default function RootLayout({
       className={`${inter.variable} ${playfair.variable} ${lora.variable} ${fraunces.variable} ${spaceGrotesk.variable} ${syne.variable} ${instrumentSerif.variable} ${dmSerifDisplay.variable} ${sora.variable} ${manrope.variable}`}
       style={{ fontFamily: "var(--font-inter)" }}
     >
-      <body className="antialiased text-slate-900 bg-[#f7f4ee]">
+      <body className="antialiased text-[#dde5f4] bg-[#0a0f1e]">
+        <SpatialBackground />
         <ScrollToTop />
         <ScrollAnimations />
         <CustomCursor />

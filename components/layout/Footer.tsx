@@ -5,7 +5,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-950 border-t border-gray-800 mt-20">
+    <footer className="bg-[#060a14] border-t border-white/8 mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
@@ -13,8 +13,8 @@ export default function Footer() {
             <h3 className="text-lg font-display font-bold text-white mb-4">
               Chang Liu
             </h3>
-            <p className="text-gray-400 text-sm">
-              Full-Stack Developer & HCI/HRI Researcher building robust systems and intuitive interfaces.
+            <p className="text-slate-400 text-sm">
+              Software Engineer & Researcher building robust systems and intuitive interfaces.
             </p>
           </div>
 

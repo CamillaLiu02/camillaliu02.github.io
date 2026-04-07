@@ -101,7 +101,7 @@ export default function HeroScroll() {
   const avatarParallaxY = scrollY * 0.05;
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#f7f4ee]">
+    <section className="relative min-h-screen overflow-hidden bg-transparent">
       <div className="relative min-h-screen w-full pb-24 sm:pb-28 lg:pb-32">
         {/* Centered avatar anchored to bottom */}
         <div className="absolute inset-x-0 bottom-0 flex justify-center">
@@ -187,9 +187,9 @@ export default function HeroScroll() {
           }}
         >
           <div className="text-center space-y-6 px-6">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-none tracking-tight uppercase text-slate-900 drop-shadow-[0_4px_16px_rgba(15,23,42,0.2)]">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-none tracking-tight uppercase text-[#dde5f4] drop-shadow-[0_4px_32px_rgba(99,102,241,0.3)]">
               <span className="relative inline-block">
-                <span className="absolute inset-0 text-slate-900/10 scale-[1.04]">
+                <span className="absolute inset-0 text-white/10 scale-[1.04]">
                   <TypingText
                     text="HELLO I'M"
                     speed={100}
@@ -197,7 +197,7 @@ export default function HeroScroll() {
                     gradientStart={10}
                   />
                 </span>
-                <span className="relative text-slate-800">
+                <span className="relative text-[#dde5f4]">
                   <TypingText
                     text="HELLO I'M"
                     speed={100}
@@ -225,7 +225,7 @@ export default function HeroScroll() {
                 </span>
               </span>
             </h1>
-            <div className="text-base sm:text-lg text-slate-800 bg-white/70 backdrop-blur-sm inline-block px-4 py-1.5 rounded-full shadow-sm">
+            <div className="text-base sm:text-lg text-slate-200 bg-white/8 backdrop-blur-sm inline-block px-4 py-1.5 rounded-full shadow-sm border border-white/10">
               <TypingText
                 text="Welcome to my portfolio!"
                 speed={100}
@@ -233,19 +233,19 @@ export default function HeroScroll() {
               />
             </div>
             <div className="flex flex-wrap justify-center gap-3 pt-5">
-              <span className="rounded-full bg-gradient-to-r from-fuchsia-500/20 via-pink-500/20 to-indigo-500/20 p-[1px] shadow-[0_10px_30px_rgba(124,58,237,0.18)] transition-transform duration-300 hover:-translate-y-0.5">
-                <span className="inline-flex items-center rounded-full bg-white/85 px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-700 backdrop-blur-sm">
-                  Full-Stack Developer
+              <span className="rounded-full bg-gradient-to-r from-indigo-500/30 via-violet-500/30 to-purple-500/30 p-[1px] shadow-[0_10px_30px_rgba(99,102,241,0.25)] transition-transform duration-300 hover:-translate-y-0.5">
+                <span className="inline-flex items-center rounded-full bg-white/8 px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-indigo-200 backdrop-blur-sm">
+                  Software Engineer
                 </span>
               </span>
-              <span className="rounded-full bg-gradient-to-r from-emerald-500/20 via-teal-500/20 to-sky-500/20 p-[1px] shadow-[0_10px_30px_rgba(16,185,129,0.18)] transition-transform duration-300 hover:-translate-y-0.5">
-                <span className="inline-flex items-center rounded-full bg-white/85 px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-700 backdrop-blur-sm">
-                  HCI/HRI Researcher
+              <span className="rounded-full bg-gradient-to-r from-sky-500/30 via-cyan-500/30 to-teal-500/30 p-[1px] shadow-[0_10px_30px_rgba(14,165,233,0.20)] transition-transform duration-300 hover:-translate-y-0.5">
+                <span className="inline-flex items-center rounded-full bg-white/8 px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-sky-200 backdrop-blur-sm">
+                  Systems & Backend
                 </span>
               </span>
-              <span className="rounded-full bg-gradient-to-r from-amber-400/25 via-rose-400/25 to-fuchsia-400/25 p-[1px] shadow-[0_10px_30px_rgba(251,146,60,0.18)] transition-transform duration-300 hover:-translate-y-0.5">
-                <span className="inline-flex items-center rounded-full bg-white/85 px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-slate-700 backdrop-blur-sm">
-                  UI/UX Designer
+              <span className="rounded-full bg-gradient-to-r from-violet-500/30 via-purple-500/30 to-fuchsia-500/30 p-[1px] shadow-[0_10px_30px_rgba(139,92,246,0.22)] transition-transform duration-300 hover:-translate-y-0.5">
+                <span className="inline-flex items-center rounded-full bg-white/8 px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-violet-200 backdrop-blur-sm">
+                  Robotics & AI
                 </span>
               </span>
             </div>

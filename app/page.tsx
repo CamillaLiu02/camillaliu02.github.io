@@ -64,7 +64,7 @@ export default function Home() {
         <section id="intro" className="py-20 scroll-mt-32">
           <div className="max-w-screen-2xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
             <IntroScrollText>
-              <p className="text-3xl sm:text-4xl lg:text-5xl font-apple text-black leading-[1.2] tracking-tight max-w-none mx-auto">
+              <p className="text-3xl sm:text-4xl lg:text-5xl font-apple text-[#dde5f4] leading-[1.2] tracking-tight max-w-none mx-auto">
                 Hi, I’m Chang Liu,
                 <span className="block sm:inline"> a </span>
                 <RotatingRoles />
@@ -80,23 +80,23 @@ export default function Home() {
         <section id="experience" className="py-24 scroll-mt-24">
           <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
             <div className="text-center mb-14">
-              <p className="text-xs uppercase tracking-[0.35em] text-slate-500">
+              <p className="text-xs uppercase tracking-[0.35em] text-slate-400">
                 Experience & Education
               </p>
-              <h2 className="text-4xl sm:text-5xl font-apple font-bold text-slate-900 mt-4 leading-tight">
+              <h2 className="text-4xl sm:text-5xl font-apple font-bold text-[#dde5f4] mt-4 leading-tight">
                 My Journey 🛵
               </h2>
-              <p className="text-base text-slate-600 max-w-2xl mx-auto mt-4 font-apple leading-relaxed">
+              <p className="text-base text-slate-400 max-w-2xl mx-auto mt-4 font-apple leading-relaxed">
                 Recent roles and academic focus areas that shape my design and engineering work.
               </p>
             </div>
 
-            <div className="rounded-3xl border border-emerald-100/80 bg-white/80 p-8 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur">
+            <div className="rounded-3xl border border-white/8 bg-white/4 p-8 shadow-[0_20px_60px_rgba(0,0,0,0.4)] backdrop-blur-xl">
               <div className="flex items-center gap-4 mb-10">
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-emerald-400 via-green-400 to-lime-400 text-white shadow-sm">
                   <HiBriefcase className="text-xl" />
                 </span>
-                <h3 className="text-2xl font-apple font-bold text-slate-900">Experience</h3>
+                <h3 className="text-2xl font-apple font-bold text-[#dde5f4]">Experience</h3>
               </div>
               <TimelineItem
                 date="Oct 2025 – Present"
@@ -119,12 +119,12 @@ export default function Home() {
               />
             </div>
 
-            <div className="mt-12 rounded-3xl border border-emerald-100/80 bg-white/80 p-8 shadow-[0_20px_60px_rgba(15,23,42,0.08)] backdrop-blur">
+            <div className="mt-12 rounded-3xl border border-white/8 bg-white/4 p-8 shadow-[0_20px_60px_rgba(0,0,0,0.4)] backdrop-blur-xl">
               <div className="flex items-center gap-4 mb-10">
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-emerald-400 via-green-400 to-lime-400 text-white shadow-sm">
                   <HiAcademicCap className="text-xl" />
                 </span>
-                <h3 className="text-2xl font-apple font-bold text-slate-900">Education</h3>
+                <h3 className="text-2xl font-apple font-bold text-[#dde5f4]">Education</h3>
               </div>
               <TimelineItem
                 date="Sep 2022 – May 2026 (Expected)"
@@ -158,10 +158,10 @@ export default function Home() {
           <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10">
             <div className="grid gap-10 lg:grid-cols-[280px_1fr] lg:items-start">
               <div>
-                <h2 className="text-4xl sm:text-5xl font-apple font-bold text-slate-900">
+                <h2 className="text-4xl sm:text-5xl font-apple font-bold text-[#dde5f4]">
                   My Toolbox 🧰
                 </h2>
-                <p className="text-base sm:text-lg text-slate-600 font-apple mt-4">
+                <p className="text-base sm:text-lg text-slate-400 font-apple mt-4">
                   Tools I use to design, build, and ship.
                 </p>
               </div>
@@ -179,10 +179,10 @@ export default function Home() {
           <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10">
             <ScrollFade>
               <div className="mb-16">
-                <h2 className="text-5xl font-apple font-bold text-slate-900 mb-4 leading-tight">
+                <h2 className="text-5xl font-apple font-bold text-[#dde5f4] mb-4 leading-tight">
                   Featured Projects
                 </h2>
-                <p className="text-base text-slate-600 max-w-2xl font-apple leading-relaxed">
+                <p className="text-base text-slate-400 max-w-2xl font-apple leading-relaxed">
                   A selection of recent work spanning human-centered design, software engineering, and applied research.
                 </p>
               </div>
@@ -225,29 +225,29 @@ export default function Home() {
                         isOdd ? '' : 'md:order-1'
                       }`}
                     >
-                      <div className="rounded-[28px] overflow-hidden shadow-[0_24px_80px_rgba(15,23,42,0.18)] ring-1 ring-white/60 bg-gradient-to-br from-white/65 via-sky-200/40 to-indigo-200/35 hover:-translate-y-1 transition-all duration-300">
-                        <div className="p-6 sm:p-7 flex flex-col border border-white/40 bg-white/30 backdrop-blur-2xl">
+                      <div className="rounded-[28px] overflow-hidden shadow-[0_24px_80px_rgba(0,0,0,0.5)] ring-1 ring-white/10 bg-gradient-to-br from-white/6 via-indigo-500/8 to-violet-500/6 hover:-translate-y-1 transition-all duration-300">
+                        <div className="p-6 sm:p-7 flex flex-col border border-white/8 bg-white/3 backdrop-blur-2xl">
                           <div className="flex flex-wrap gap-2 mb-3">
                             {project.frontmatter.tags.slice(0, 3).map((tag) => (
                               <span
                                 key={tag}
-                                className="text-xs font-semibold px-3 py-1 rounded-full border backdrop-blur bg-white/45 text-slate-900 border-white/50"
+                                className="text-xs font-semibold px-3 py-1 rounded-full border backdrop-blur bg-white/8 text-slate-200 border-white/15"
                               >
                                 {tag}
                               </span>
                             ))}
                           </div>
-                          <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">
+                          <h3 className="text-2xl sm:text-3xl font-bold text-[#dde5f4] mb-3">
                             {project.frontmatter.title}
                           </h3>
-                          <p className="text-slate-700 text-sm sm:text-base mb-6">
+                          <p className="text-slate-400 text-sm sm:text-base mb-6">
                             {project.frontmatter.shortDescription}
                           </p>
                           <div className="mt-auto flex items-center justify-between">
-                            <span className="text-xs uppercase tracking-[0.2em] text-slate-600">
+                            <span className="text-xs uppercase tracking-[0.2em] text-slate-500">
                               {formatDate(project.frontmatter.date)}
                             </span>
-                            <span className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold shadow-sm border backdrop-blur bg-white/55 text-slate-900 border-white/60">
+                            <span className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold shadow-sm border backdrop-blur bg-indigo-500/15 text-indigo-200 border-indigo-400/25">
                               View case
                               <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
                             </span>
@@ -265,7 +265,7 @@ export default function Home() {
               <div>
                 <Link
                   href="/projects"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-sm font-semibold hover:bg-slate-800 transition-colors text-sm tracking-wide uppercase"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-500/20 text-indigo-200 border border-indigo-400/30 rounded-sm font-semibold hover:bg-indigo-500/30 transition-colors text-sm tracking-wide uppercase backdrop-blur"
                 >
                   View All Projects
                   <HiArrowRight />
@@ -297,15 +297,15 @@ export default function Home() {
 
       {/* Quick Links / CTA */}
       <ScrollFade>
-        <section id="resume" className="py-24 text-slate-900 border-t border-stone-200 scroll-mt-24">
+        <section id="resume" className="py-24 border-t border-white/8 scroll-mt-24">
           <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
             <ScrollFade>
-              <h2 className="text-5xl font-apple font-bold mb-6 leading-tight">
+              <h2 className="text-5xl font-apple font-bold text-[#dde5f4] mb-6 leading-tight">
                 Let’s Connect
               </h2>
             </ScrollFade>
             <ScrollFade delay={100}>
-              <p className="text-lg text-slate-600 mb-10 font-apple leading-relaxed">
+              <p className="text-lg text-slate-400 mb-10 font-apple leading-relaxed">
                 I’m always open to new opportunities and connections. I’d love to connect and share my work!
               </p>
             </ScrollFade>
@@ -313,7 +313,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <Link
                   href="/resume"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-slate-900 text-white rounded-sm font-semibold hover:bg-slate-800 transition-colors text-sm tracking-wide uppercase"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-indigo-500/20 text-indigo-200 border border-indigo-400/30 rounded-sm font-semibold hover:bg-indigo-500/30 transition-colors text-sm tracking-wide uppercase backdrop-blur"
                 >
                   View Resume
                 </Link>
@@ -328,13 +328,13 @@ export default function Home() {
         <section id="contact" className="py-24 scroll-mt-24">
           <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10">
             <div className="grid grid-cols-1 gap-10 items-stretch">
-              <div className="h-full rounded-[28px] border border-stone-200/80 bg-white/90 p-8 sm:p-10 shadow-[0_24px_80px_rgba(15,23,42,0.12)] backdrop-blur mx-auto">
+              <div className="h-full rounded-[28px] border border-white/8 bg-white/4 p-8 sm:p-10 shadow-[0_24px_80px_rgba(0,0,0,0.4)] backdrop-blur-xl mx-auto">
                 <div className="mb-8">
-                  <p className="text-xs uppercase tracking-[0.35em] text-slate-500">Get in touch</p>
-                  <h2 className="text-4xl sm:text-5xl font-apple font-bold text-slate-900 mt-3">
+                  <p className="text-xs uppercase tracking-[0.35em] text-slate-400">Get in touch</p>
+                  <h2 className="text-4xl sm:text-5xl font-apple font-bold text-[#dde5f4] mt-3">
                     Contact.
                   </h2>
-                  <p className="text-sm sm:text-base text-slate-600 mt-3">
+                  <p className="text-sm sm:text-base text-slate-400 mt-3">
                     Drop a note and I’ll get back to you soon.
                   </p>
                 </div>
@@ -349,7 +349,7 @@ export default function Home() {
                     <div>
                       <label
                         htmlFor="contact-name"
-                        className="block text-sm font-medium text-slate-600 mb-2"
+                        className="block text-sm font-medium text-slate-400 mb-2"
                       >
                         Name
                       </label>
@@ -358,14 +358,14 @@ export default function Home() {
                         id="contact-name"
                         name="name"
                         required
-                        className="w-full px-4 py-3 border border-stone-200 rounded-xl bg-white text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                        className="w-full px-4 py-3 border border-white/10 rounded-xl bg-white/5 text-[#dde5f4] placeholder-slate-500 focus:ring-2 focus:ring-indigo-500 focus:border-transparent backdrop-blur"
                         placeholder="Your name"
                       />
                     </div>
                     <div>
                       <label
                         htmlFor="contact-email"
-                        className="block text-sm font-medium text-slate-600 mb-2"
+                        className="block text-sm font-medium text-slate-400 mb-2"
                       >
                         Email
                       </label>
@@ -374,7 +374,7 @@ export default function Home() {
                         id="contact-email"
                         name="email"
                         required
-                        className="w-full px-4 py-3 border border-stone-200 rounded-xl bg-white text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                        className="w-full px-4 py-3 border border-white/10 rounded-xl bg-white/5 text-[#dde5f4] placeholder-slate-500 focus:ring-2 focus:ring-indigo-500 focus:border-transparent backdrop-blur"
                         placeholder="you@email.com"
                       />
                     </div>
@@ -383,7 +383,7 @@ export default function Home() {
                   <div>
                     <label
                       htmlFor="contact-message"
-                      className="block text-sm font-medium text-slate-600 mb-2"
+                      className="block text-sm font-medium text-slate-400 mb-2"
                     >
                       Message
                     </label>
@@ -392,14 +392,14 @@ export default function Home() {
                       name="body"
                       rows={5}
                       required
-                      className="w-full px-4 py-3 border border-stone-200 rounded-xl bg-white text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-white/10 rounded-xl bg-white/5 text-[#dde5f4] placeholder-slate-500 focus:ring-2 focus:ring-indigo-500 focus:border-transparent backdrop-blur"
                       placeholder="Tell me about your project or opportunity..."
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full px-6 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-emerald-500 to-lime-500 hover:from-emerald-600 hover:to-lime-600 transition-colors"
+                    className="w-full px-6 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-indigo-500 to-violet-500 hover:from-indigo-600 hover:to-violet-600 transition-colors shadow-[0_8px_24px_rgba(99,102,241,0.3)]"
                   >
                     Send Message
                   </button>
