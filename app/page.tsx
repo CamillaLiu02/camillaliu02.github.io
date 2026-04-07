@@ -276,8 +276,8 @@ export default function Home() {
         </section>
       </ScrollFade>
 
-      {/* Selected Works */}
-      <ScrollFade>
+      {/* Selected Works — temporarily hidden */}
+      {/* <ScrollFade>
         <section className="py-24">
           <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10">
             <ScrollFade>
@@ -293,7 +293,7 @@ export default function Home() {
             <SelectedWorksDeck />
           </div>
         </section>
-      </ScrollFade>
+      </ScrollFade> */}
 
       {/* Quick Links / CTA */}
       <ScrollFade>

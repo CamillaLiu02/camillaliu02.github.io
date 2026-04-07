@@ -3,7 +3,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
 import TypingText from './TypingText';
-import Terminal from './Terminal';
 
 export default function HeroScroll() {
   const [scrollY, setScrollY] = useState(0);
@@ -103,9 +102,6 @@ export default function HeroScroll() {
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#f7f4ee]">
-      {/* Terminal */}
-      <Terminal />
-
       <div className="relative min-h-screen w-full pb-24 sm:pb-28 lg:pb-32">
         {/* Centered avatar anchored to bottom */}
         <div className="absolute inset-x-0 bottom-0 flex justify-center">

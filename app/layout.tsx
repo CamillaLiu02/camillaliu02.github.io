@@ -16,9 +16,7 @@ import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import CustomCursor from "@/components/ui/CustomCursor";
 import ScrollAnimations from "@/components/ui/ScrollAnimations";
-import Terminal from "@/components/ui/Terminal";
 import ScrollToTop from "@/components/ui/ScrollToTop";
-import { TerminalProvider } from "@/components/ui/TerminalContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -149,17 +147,14 @@ export default function RootLayout({
       style={{ fontFamily: "var(--font-inter)" }}
     >
       <body className="antialiased text-slate-900 bg-[#f7f4ee]">
-        <TerminalProvider>
-          <ScrollToTop />
-          <ScrollAnimations />
-          <CustomCursor />
-          <Terminal />
-          <div className="relative z-10">
-            <Navigation />
-            <main className="min-h-screen">{children}</main>
-            <Footer />
-          </div>
-        </TerminalProvider>
+        <ScrollToTop />
+        <ScrollAnimations />
+        <CustomCursor />
+        <div className="relative z-10">
+          <Navigation />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

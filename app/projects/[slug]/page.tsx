@@ -147,11 +147,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       <div className="bg-gray-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <Link
-            href="/projects"
+            href="/#projects"
             className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
           >
             <HiArrowLeft />
-            <span>Back to Projects</span>
+            <span>Back</span>
           </Link>
         </div>
       </div>

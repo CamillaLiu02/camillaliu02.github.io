@@ -1,6 +1,6 @@
 ---
 slug: robotics-vr
-title: "(In Progress...)Immersive VR–Robotics Control System"
+title: "Immersive VR–Robotics Control System (In Progress...)"
 date: "2025-10-01"
 tags: ["VR/XR", "Robotics", "Human-Robot Interaction", "ROS", "Research", "Motion Planning", "Linux", "TCP/IP"]
 shortDescription: "Adapted and extended a VR–robotics framework for intuitive control of real-world robotic arms. Integrated Meta Quest 3, Unity, and ROS to enable immersive manipulation of a UR3e robotic arm through pose-based VR interaction."
@@ -150,64 +150,6 @@ The original framework was designed for a UR10 robot. Adapting to UR3e required:
 - Systematic validation of workspace edges and constraint boundaries
 - Usability pilot tests with early user interaction
 - Safety validation through supervised testing with multiple pose types
-
----
-
-## Current Work & Future Directions
-
-### Adaptation
-- Transitioning the VR–robotics control pipeline from UR10 to UR3e in progress
-- Refining kinematics, motion planning, and pose alignment for reliable real-world execution
-- Iteratively testing and debugging VR-to-robot consistency during integration
-
-### User Research Study
-
-To validate the system, I designed a comparative user study for future deployment.
-
-#### Participants
-
-- **n = 24** (12 per condition, counterbalanced)
-- **Backgrounds**: 50% robotics students, 50% non-technical
-- **VR experience**: 6 novices, 12 intermediate, 6 experts
-
-#### Study Design
-
-**Independent Variable**: Control method (VR vs. Keyboard/Mouse)
-
-**Dependent Variables**:
-- Task completion time
-- Path efficiency (distance traveled)
-- Collision rate
-- NASA-TLX workload score
-- User preference (Likert scale)
-
-**Task**: Pick up a cube, navigate through a narrow gap, place it on a target platform
-
-#### Procedure
-
-1. 10-minute training with each interface
-2. 5 task repetitions per interface (recorded)
-3. Post-task questionnaire (SUS, NASA-TLX)
-4. Semi-structured interview
-
-**Current Status**:
-- Recruiting volunteers to test VR interface effectiveness
-- Measuring task completion time, accuracy, and cognitive load
-- Collecting feedback on usability and spatial understanding
-- Analyzing differences between expert and novice users
-
-### Paper Publication
-- Documenting framework adaptation process and technical insights
-- Submitting to robotics/HRI conference next semester
-- Sharing lessons learned in system integration and platform migration
-
-### Future Extensions
-
-- **Haptic Feedback Integration** – Adding force-feedback devices for proprioceptive guidance
-- **Multi-Robot Coordination** – Extending framework to coordinate multiple robotic arms
-- **Task Learning** – Enabling users to record and replay manipulation sequences
-- **Eye-Gaze Integration** – Using gaze tracking for enhanced spatial targeting
-- **Gesture-Based Commands** – Beyond pose specification, exploring natural gesture interfaces
 
 ---
 
