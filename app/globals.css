@@ -46,6 +46,18 @@ body > * {
   z-index: 1;
 }
 
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* Hide default cursor on interactive elements */
 a, button, input, select, textarea {
   cursor: none;
